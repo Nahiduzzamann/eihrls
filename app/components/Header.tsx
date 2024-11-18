@@ -1,10 +1,13 @@
 "use client";
-import { Button, Drawer } from "@mui/material";
-import React, { useState } from "react";
+import { Drawer } from "@mui/material";
+import React, { useContext, useState } from "react";
 import { FaAlignRight } from "react-icons/fa";
 import DrawerList from "./DrawerList";
+import LanguageToggleButton from "./LanguageToggleButton";
+import { LanguageContext } from "../providers/LanguageProvider";
 
-export default function Header() {
+const Header = () => {
+  const { language } = useContext(LanguageContext);
   const [open, setOpen] = useState(false);
   const handleDrawerOpen = () => {
     setOpen(!open);
@@ -16,7 +19,8 @@ export default function Header() {
           <p>logo</p>
         </div>
         <div className=" md:flex gap-5 hidden">
-          <p>home</p>
+          <LanguageToggleButton></LanguageToggleButton>
+          <p>{language === "en" ? "Home" : "হোম"}</p>
           <p>About</p>
           <p>Contact</p>
         </div>
@@ -31,4 +35,5 @@ export default function Header() {
       </div>
     </div>
   );
-}
+};
+export default Header;
