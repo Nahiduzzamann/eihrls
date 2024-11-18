@@ -21,9 +21,9 @@ export default function Header() {
           <p>Contact</p>
         </div>
         <div className=" md:hidden">
-          <Button onClick={handleDrawerOpen}>
-            <FaAlignRight className="text-xl" />
-          </Button>
+          <div onClick={handleDrawerOpen} className="cursor-pointer">
+            <FaAlignRight className="text-xl text-blue-500 hover:text-blue-700" />
+          </div>
           <Drawer open={open} onClose={handleDrawerOpen}>
             <DrawerList handleDrawerOpen={handleDrawerOpen}></DrawerList>
           </Drawer>
