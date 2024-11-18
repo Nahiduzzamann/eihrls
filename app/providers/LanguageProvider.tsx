@@ -2,7 +2,7 @@
 import React, { createContext, useState, useEffect, ReactNode } from "react";
 
 // Define the type for the context
-interface LanguageContextType {
+type LanguageContextType= {
   language: string;
   toggleLanguage: () => void;
 }
