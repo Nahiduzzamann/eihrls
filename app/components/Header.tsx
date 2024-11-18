@@ -28,7 +28,7 @@ const Header = () => {
           <div onClick={handleDrawerOpen} className="cursor-pointer">
             <FaAlignRight className="text-xl text-blue-500 hover:text-blue-700" />
           </div>
-          <Drawer open={open} onClose={handleDrawerOpen}>
+          <Drawer anchor="right" open={open} onClose={handleDrawerOpen}>
             <DrawerList handleDrawerOpen={handleDrawerOpen}></DrawerList>
           </Drawer>
         </div>
